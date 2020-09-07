@@ -1,0 +1,10 @@
+[user]
+	name = Peter Coulton
+	email = petercoulton@gmail.com
+
+[alias]
+	co = checkout
+	ci = commit
+	cm = commit --message
+	st = status
+	
