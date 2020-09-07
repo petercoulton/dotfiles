@@ -8,3 +8,9 @@
 	cm = commit --message
 	st = status
 	
+[core]
+	excludesFile = /Users/peter/.config/git/excludes
+
+[pull]
+	ff = only
+
