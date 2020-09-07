@@ -4,5 +4,5 @@
 
 iterm2 config isn't stowable, it has to be loaded manually:
 
-![](_images/iterm2-preferences_.png)
+![](_images/iterm2-preferences.png)
 
