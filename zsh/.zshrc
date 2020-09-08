@@ -1,4 +1,5 @@
 alias ls="exa --group-directories-first"
+alias cat=bat
 
 . $(brew --prefix asdf)/asdf.sh
 . ${HOME}/.asdf/plugins/java/set-java-home.zsh
