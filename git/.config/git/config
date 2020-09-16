@@ -7,6 +7,8 @@
 	ci = commit
 	cm = commit --message
 	st = status
+	hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
 	
 [core]
 	excludesFile = /Users/peter/.config/git/excludes
