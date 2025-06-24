@@ -1,0 +1,25 @@
+
+[core]
+  excludesfile = ~/.config/git/ignore
+
+[tag]
+  sort = version:refname
+
+[column]
+  ui = auto
+
+[help]
+  autocorrect = prompt
+
+[init]
+  defaultBranch = main
+
+[alias]
+  br = branch
+  cm = commit --message
+  co = checkout
+  st = status --short
+
+[user]
+	name = Peter Coulton
+	email = petercoulton@gmail.com
