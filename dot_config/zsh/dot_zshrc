@@ -5,7 +5,6 @@ eval "$(starship init zsh)"
 LS_OPTIONS="--group-directories-first --git --no-user --time-style=long-iso"
 alias ls="eza ${LS_OPTIONS}"
 alias l="ls -al"
-alias love="/Applications/love.app/Contents/MacOS/love"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
