@@ -1,0 +1,20 @@
+
+Host macmini
+  Hostname macmini.local
+  User petercoulton
+
+Host macbook
+  Hostname macbook.local
+  User peter
+
+Host github
+  Hostname github.com
+  User git
+
+Host bitbucket
+  Hostname bitbucket.org
+  User git
+  IdentityFile ~/.ssh/bitbucket
+
+Host i-* mi-*
+    ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --profile amp-dev-admin"
