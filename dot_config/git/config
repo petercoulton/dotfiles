@@ -20,6 +20,7 @@
   co = checkout
   st = status --short
   pom = push origin main
+  au = add --update
 
 [user]
 	name = Peter Coulton
