@@ -27,6 +27,27 @@ eval "$(starship init zsh)"
 bindkey -e  # emacs-style keybindings
 
 
+##### Functions
+
+cdp() {
+  local ROOT="${HOME}/Code"
+  local DEST="$(\
+    fasd -ldR "${ROOT}" "${@}" |
+    fzf --select-1 \
+        --height 40% \
+        --info inline \
+        --preview 'eza --tree --level=2 --group-directories-first --color=always {}'\
+  )"
+  cd "${DEST}"
+}
+alias p=cdp
+
+
+##### fasd
+
+eval "$(fasd --init auto)"
+
+
 ##### NVM
 
 export NVM_DIR="$HOME/.nvm"
