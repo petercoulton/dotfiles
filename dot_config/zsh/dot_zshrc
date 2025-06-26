@@ -1,21 +1,40 @@
+##### Path
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:${HOME}/.local/bin"
+
+
+##### Env
+
+export EDITOR=nvim
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-eval "$(starship init zsh)"
+
+##### Aliases
 
 LS_OPTIONS="--group-directories-first --git --no-user --time-style=long-iso"
 alias ls="eza ${LS_OPTIONS}"
 alias l="ls -al"
 
+
+##### Prompt
+
+eval "$(starship init zsh)"
+
+
+##### Keybindings
+
 bindkey -e  # emacs-style keybindings
+
+
+##### NVM
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export EDITOR=nvim
 
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH="$PATH:${HOME}/.local/bin"
+##### SDKMAN
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

@@ -19,6 +19,7 @@
   cm = commit --message
   co = checkout
   st = status --short
+  pom = push origin main
 
 [user]
 	name = Peter Coulton
