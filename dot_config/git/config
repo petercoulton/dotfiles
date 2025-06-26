@@ -21,6 +21,11 @@
   st = status --short
   pom = push origin main
   au = add --update
+  l = log --pretty=format:'%C(yellow)%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%C(yellow)%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue<%an>%Creset' --abbrev-commit --date=relative
+  la = !git lg --all
+  amend = commit --amend --reuse-message=HEAD
+  here = !git init && touch .gitignore && git add --all && git commit --message=\"chore: initial commit\"
 
 [user]
 	name = Peter Coulton
