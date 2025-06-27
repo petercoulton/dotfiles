@@ -2,7 +2,7 @@
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:${HOME}/.local/bin"
-
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 ##### Env
 
@@ -64,6 +64,11 @@ alias p=cdp
 ##### fasd
 
 eval "$(fasd --init auto)"
+
+
+##### direnv
+
+eval "$(direnv hook zsh)"
 
 
 ##### NVM
