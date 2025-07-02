@@ -1,6 +1,7 @@
 ##### Path
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:${HOME}/.local/bin"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
@@ -33,6 +34,12 @@ setopt HIST_BEEP
 LS_OPTIONS="--group-directories-first --git --no-user --time-style=long-iso"
 alias ls="eza ${LS_OPTIONS}"
 alias l="ls -al"
+
+##### Completions
+
+fpath=(/Users/peter/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
 
 
 ##### Prompt
