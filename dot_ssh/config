@@ -7,11 +7,11 @@ Host macbook
   Hostname macbook.local
   User peter
 
-Host github
+Host gh
   Hostname github.com
   User git
 
-Host bitbucket
+Host bb
   Hostname bitbucket.org
   User git
   IdentityFile ~/.ssh/bitbucket
