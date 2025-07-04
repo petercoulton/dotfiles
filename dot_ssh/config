@@ -2,10 +2,14 @@
 Host macmini
   Hostname macmini.local
   User petercoulton
+  SendEnv TERM
+  SetEnv TERM=xterm-256color
 
 Host macbook
   Hostname macbook.local
   User peter
+  SendEnv TERM
+  SetEnv TERM=xterm-256color
 
 Host gh
   Hostname github.com
@@ -18,3 +22,4 @@ Host bb
 
 Host i-* mi-*
     ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --profile amp-dev-admin"
+
