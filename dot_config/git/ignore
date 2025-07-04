@@ -30,6 +30,11 @@ __pycache__/
 *.py[cod]
 *.pyo
 
+# Clojure / Calva
+.clj-kondo/
+.cpcache
+.lsp/
+
 # Other
 .env
 .env.*

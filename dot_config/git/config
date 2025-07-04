@@ -27,6 +27,17 @@
   amend = commit --amend --reuse-message=HEAD
   here = !git init && touch .gitignore && git add --all && git commit --message=\"chore: initial commit\"
 
+[log]
+  abbrevCommit = true
+
 [user]
 	name = Peter Coulton
 	email = petercoulton@gmail.com
+
+[url "git@github.com:amplience/"]
+  insteadOf = a:
+
+[url "git@github.com:petercoulton/"]
+  insteadOf = p:
+
+[help]
