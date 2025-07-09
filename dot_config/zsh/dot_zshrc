@@ -2,8 +2,9 @@
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$PATH:/opt/homebrew/opt/gnu-sed/libexec/gnubin"
 export PATH="$PATH:${HOME}/.local/bin"
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$PATH:${HOME}/.cargo/bin"
 
 ##### Env
 
@@ -57,15 +58,27 @@ bindkey -e  # emacs-style keybindings
 cdp() {
   local ROOT="${HOME}/Code"
   local DEST="$(\
-    fasd -ldR "${ROOT}" "${@}" |
+    fasd -ldR "${ROOT}" -- "${@}" |
     fzf --select-1 \
         --height 40% \
         --info inline \
-        --preview 'eza --tree --level=2 --group-directories-first --color=always {}'\
+        --preview 'eza --tree --level=3 --group-directories-first --color=always {}'\
   )"
-  cd "${DEST}"
+
+  if [ -n "$DEST" ]; then
+    cd "$DEST"
+  else
+    echo "No match selected." >&2
+    return 1
+  fi
 }
 alias p=cdp
+
+_cdp() {
+  local ROOT="${HOME}/Code"
+  _files -W "$ROOT" -/  
+}
+compdef _cdp cdp
 
 
 ##### fasd
@@ -77,6 +90,9 @@ eval "$(fasd --init auto)"
 
 eval "$(direnv hook zsh)"
 
+##### GraalVM
+
+export GRAALVM_HOME="${HOME}/.sdkman/candidates/java/24.0.1-graal"
 
 ##### NVM
 
