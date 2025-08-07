@@ -57,20 +57,25 @@ bindkey -e  # emacs-style keybindings
 
 cdp() {
   local ROOT="${HOME}/Code"
-  local DEST="$(\
-    fasd -ldR "${ROOT}" -- "${@}" |
-    fzf --select-1 \
-        --height 40% \
-        --info inline \
-        --preview 'eza --tree --level=3 --group-directories-first --color=always {}'\
-  )"
-
-  if [ -n "$DEST" ]; then
-    cd "$DEST"
+  if [ "$(fasd -ldR "${ROOT}" "$@" | wc -l)" -gt 0 ]; then
+    local DEST="$(\
+      fasd -ldR "${ROOT}" "${@}" |
+      fzf --select-1 \
+          --height 40% \
+          --info inline \
+          --preview 'eza --tree --level=3 --group-directories-first --color=always {}'\
+    )"
   else
-    echo "No match selected." >&2
-    return 1
+    local DEST="$(\
+      fasd -ldR | grep "${HOME}/Code" |
+      fzf --select-1 \
+          --height 40% \
+          --info inline \
+          --preview 'eza --tree --level=3 --group-directories-first --color=always {}'\
+    )"
   fi
+
+  cd "${DEST}"
 }
 alias p=cdp
 
