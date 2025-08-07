@@ -84,6 +84,7 @@ _cdp() {
   _files -W "$ROOT" -/  
 }
 compdef _cdp cdp
+compdef _cdp p
 
 
 ##### fasd
