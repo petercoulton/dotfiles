@@ -35,6 +35,7 @@ setopt HIST_BEEP
 LS_OPTIONS="--group-directories-first --git --no-user --time-style=long-iso"
 alias ls="eza ${LS_OPTIONS}"
 alias l="ls -al"
+alias cat=bat
 
 ##### Completions
 
